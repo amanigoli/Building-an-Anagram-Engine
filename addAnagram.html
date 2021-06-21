@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        table,td,th{
+        border:solid black 1px;
+        }
+        th,td{
+        padding-left: 1em;
+         padding-right: 1em;
+         padding-top:2px;
+         padding-bottom:2px;
+         }
+         .nav{
+        font-weight: 50;
+        font-family: Lato, sans-serif;
+        }
+        .email{
+    text-transform: lowercase;
+    line-height: 3;
+        }
+        .content{
+        width: 29%;
+        margin:0 auto! important;
+
+        }
+        a{
+        text-decoration:none;
+        color:#FFD300;
+        }
+       .message{
+       color: green;
+       }
+    </style>
+</head>
+<body>
+<div class="content">
+<p style="text-align: center;">Welcome <span class="email nav">{{user}}</span> you can logout <a href="{{ logout_url }}">here</a></p>
+<form action="/addAnagram" method="post">
+<table class="nav">
+    <tr>
+    <td colspan="3" style="text-align: center;">
+        <span>ADD TO ANAGRAM DICTIONARY</span>
+    </td>
+    </tr>
+    <tr>
+        <td> Word</td>
+         <td> <input type="text" name="word" size="25" pattern="[a-zA-Z]+.{2,}"/></td>
+        <td><input type="submit" name="button" value="ADD WORD"/></td>
+    </tr>
+
+
+
+</table>
+    <P class="message">{{message}}</P>
+</form>
+</div>
+</body>
+</html>

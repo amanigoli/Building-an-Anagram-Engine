@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title></title>
+    <style>
+        table,td,th{
+        border:solid blue 1px;
+        }
+        th,td{
+        padding-left: 1em;
+         padding-right: 1em;
+         padding-top:2px;
+         padding-bottom:2px;
+         }
+         .nav{
+        font-weight: 50;
+        font-family: Lato, sans-serif;
+        }
+        .email{
+    text-transform: lowercase;
+    line-height: 3;
+        }
+        .content{
+        width: 29%;
+        margin:0 auto! important;
+
+        }
+        a{
+        text-decoration:none;
+        color:black;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="content">
+<p >Welcome <span class="email nav">{{user}}</span> you can logout <a href="{{ logout_url }}">here</a></p>
+    <p style="text-align:center" class="nav"><a href="/addAnagram">Add Anagram</a></p>
+<form action="/" method="post">
+<table class="nav">
+    <tr>
+    <td colspan="3" style="text-align: center;">
+        <p>Search Anagram</p>
+    </td>
+    </tr>
+    <tr>
+        <td> Word</td>
+         <td> <input type="text" name="word" size="25" pattern="[a-zA-Z]+.{2,}"/></td>
+        <td><input type="submit" name="button" value="Check"/></td>
+    </tr>
+
+    <P>{{error}}</P>
+</table>
+
+</form>
+    <div>
+        {% for i in query %}
+        <div class="nav">{{i}}</div>
+
+        {% endfor %}
+    </div>
+    <div>
+        {% for i in count %}
+        <div class="nav"> Number of words{{i}}</div>
+
+        {% endfor %}
+    </div>
+
+    <div>
+        {% for i in lex %}
+        <div class="nav">Number of letters {{i}}</div>
+
+        {% endfor %}
+    </div>
+
+</div>
+</body>
+</html>
